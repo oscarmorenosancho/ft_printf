@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:22:03 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/10/31 15:30:59 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/10/31 16:09:48 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ int	main(void)
 	ft_printf("\\ n: %d\n", ft_printf("%s", "asdf1234"));
 	ft_printf("\\ n: %d\n", ft_printf("%i", 10));
 	ft_printf("\\ n: %d\n", ft_printf("%d", 999));
+	ft_printf("\\ n: %d\n", ft_printf("%u", -4294967295));
+	ft_printf("\\ n: %d\n", ft_printf("%u", -1));
+	ft_printf("\\ n: %d\n", ft_printf("%u", 1));
 	ft_printf("\\ n: %d\n", ft_printf("%%", 999));
 	ft_printf("\\ n: %d\n", ft_printf(" %c ", '0'));
 	ft_printf("\n");

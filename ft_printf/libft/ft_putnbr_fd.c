@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 10:17:32 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/10/04 10:51:30 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/10/31 16:00:45 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char	ft_get_last_digit(unsigned int *n, unsigned int base)
 	return (ls);
 }
 
-static size_t	ft_utobuf(unsigned int nb, char *buf)
+size_t	ft_utobuf(unsigned int nb, char *buf)
 {
 	unsigned int	restant_digits;
 	size_t			ret;

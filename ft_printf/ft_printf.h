@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 10:59:25 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/10/31 12:59:09 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/10/31 15:58:02 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,9 @@ typedef struct s_delegate_map
 	t_ft_delegate	ft_delegate;
 }	t_delegate_map;
 
-int	ft_printf(const char *fmt, ...);
+size_t	ft_process_int_arg(char **p, va_list ap);
+size_t	ft_process_uint_arg(char **p, va_list ap);
+size_t	ft_process_char_arg(char **p, va_list ap);
+size_t	ft_process_str_arg(char **p, va_list ap);
+int		ft_printf(const char *fmt, ...);
 #endif

@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 18:30:16 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/10/04 15:47:14 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/10/31 15:59:58 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,5 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+size_t	ft_utobuf(unsigned int nb, char *buf);
 #endif

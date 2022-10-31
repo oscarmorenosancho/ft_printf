@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:39:35 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/10/31 14:38:40 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/10/31 16:06:44 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,24 @@ size_t	ft_process_int_arg(char **p, va_list ap)
 	{
 		printed = ft_strlen(str);
 		ft_putstr_fd(str, 1);
-		free(str);
+		free (str);
 	}
+	return (printed);
+}
+
+size_t	ft_process_uint_arg(char **p, va_list ap)
+{
+	size_t			printed;
+	unsigned int	val;
+	char			str[12];
+
+	printed = 0;
+	if (!p || !*p)
+		return (printed);
+	val = va_arg(ap, unsigned int);
+	printed = ft_utobuf(val, str);
+	str[printed] = 0;
+	ft_putstr_fd(str, 1);
 	return (printed);
 }
 
