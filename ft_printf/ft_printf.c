@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 10:58:50 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/10/31 14:36:50 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/10/31 15:35:07 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	ft_printf(const char *fmt, ...)
 	ft_fill_delegate_map(map);
 	p = (char *)fmt;
 	va_start(ap, fmt);
+	printed = 0;
 	while (*p)
 	{
 		if (*p != '%')
@@ -74,7 +75,7 @@ int	ft_printf(const char *fmt, ...)
 		else
 		{
 			p++;
-			printed = ft_process_arg(&p, ap, map);
+			printed += ft_process_arg(&p, ap, map);
 		}
 	}
 	va_end(ap);
