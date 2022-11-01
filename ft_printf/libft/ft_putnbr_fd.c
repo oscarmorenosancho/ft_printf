@@ -6,13 +6,13 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 10:17:32 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/10/31 16:00:45 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/11/01 13:18:16 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	ft_get_last_digit(unsigned int *n, unsigned int base)
+char	ft_get_last_digit(unsigned long *n, unsigned int base)
 {
 	char	ls;
 
@@ -21,9 +21,9 @@ static char	ft_get_last_digit(unsigned int *n, unsigned int base)
 	return (ls);
 }
 
-size_t	ft_utobuf(unsigned int nb, char *buf)
+size_t	ft_utobuf(unsigned long nb, char *buf)
 {
-	unsigned int	restant_digits;
+	unsigned long	restant_digits;
 	size_t			ret;
 	char			digit;
 

@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 10:58:50 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/10/31 15:58:15 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/11/01 12:31:41 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ void	ft_fill_delegate_map(t_delegate_map	*map)
 	ft_fill_delegate_map_el(map + 0, 'i', &ft_process_int_arg);
 	ft_fill_delegate_map_el(map + 1, 'd', &ft_process_int_arg);
 	ft_fill_delegate_map_el(map + 2, 'u', &ft_process_uint_arg);
-	ft_fill_delegate_map_el(map + 3, 'c', &ft_process_char_arg);
-	ft_fill_delegate_map_el(map + 4, 's', &ft_process_str_arg);
+	ft_fill_delegate_map_el(map + 3, 'x', &ft_process_uihex_arg);
+	ft_fill_delegate_map_el(map + 4, 'X', &ft_process_uihex_up_arg);
+	ft_fill_delegate_map_el(map + 5, 'c', &ft_process_char_arg);
+	ft_fill_delegate_map_el(map + 6, 's', &ft_process_str_arg);
+	ft_fill_delegate_map_el(map + 7, 'p', &ft_process_pointer_arg);
 }
 
 static size_t	ft_process_arg(char **p, va_list ap, t_delegate_map	*map)

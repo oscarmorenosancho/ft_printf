@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 10:59:25 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/10/31 15:58:02 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/11/01 12:31:06 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ typedef struct s_delegate_map
 
 size_t	ft_process_int_arg(char **p, va_list ap);
 size_t	ft_process_uint_arg(char **p, va_list ap);
+size_t	ft_process_uihex_arg(char **p, va_list ap);
+size_t	ft_process_uihex_up_arg(char **p, va_list ap);
 size_t	ft_process_char_arg(char **p, va_list ap);
 size_t	ft_process_str_arg(char **p, va_list ap);
+size_t	ft_process_pointer_arg(char **p, va_list ap);
 int		ft_printf(const char *fmt, ...);
 #endif

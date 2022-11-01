@@ -6,14 +6,14 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:34:20 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/10/31 16:00:00 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/11/01 13:18:00 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static char	ft_get_last_digit(unsigned int *n, unsigned int base)
+char	ft_get_last_digit(unsigned long *n, unsigned int base)
 {
 	char	ls;
 
@@ -22,9 +22,9 @@ static char	ft_get_last_digit(unsigned int *n, unsigned int base)
 	return (ls);
 }
 
-size_t	ft_utobuf(unsigned int nb, char *buf)
+size_t	ft_utobuf(unsigned long nb, char *buf)
 {
-	unsigned int	restant_digits;
+	unsigned long	restant_digits;
 	size_t			ret;
 	char			digit;
 
@@ -33,6 +33,21 @@ size_t	ft_utobuf(unsigned int nb, char *buf)
 	digit = '0' + ft_get_last_digit(&restant_digits, 10);
 	if (restant_digits > 0)
 		ret = ft_utobuf(restant_digits, buf);
+	buf[ret] = digit;
+	return (ret + 1);
+}
+
+size_t	ft_utohex(unsigned long nb, char *buf)
+{
+	unsigned long	restant_digits;
+	size_t			ret;
+	char			digit;
+
+	ret = 0;
+	restant_digits = nb;
+	digit = "0123456789abcdef"[(int)ft_get_last_digit(&restant_digits, 16)];
+	if (restant_digits > 0)
+		ret = ft_utohex(restant_digits, buf);
 	buf[ret] = digit;
 	return (ret + 1);
 }

@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:22:03 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/10/31 16:09:48 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/11/01 12:29:54 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ int	main(void)
 {
 	ft_printf("\\ n: %d\n", ft_printf("%c", 'D'));
 	ft_printf("\\ n: %d\n", ft_printf("%s", "asdf1234"));
+	ft_printf("\\ n: %d\n", ft_printf("%p", "asdf1234"));
 	ft_printf("\\ n: %d\n", ft_printf("%i", 10));
+	ft_printf("\\ n: %d\n", ft_printf("%X", 10));
 	ft_printf("\\ n: %d\n", ft_printf("%d", 999));
-	ft_printf("\\ n: %d\n", ft_printf("%u", -4294967295));
-	ft_printf("\\ n: %d\n", ft_printf("%u", -1));
+	ft_printf("\\ n: %d\n", ft_printf("%X", 0x01abcdef));
+	ft_printf("\\ n: %d\n", ft_printf("%X", -1));
 	ft_printf("\\ n: %d\n", ft_printf("%u", 1));
 	ft_printf("\\ n: %d\n", ft_printf("%%", 999));
 	ft_printf("\\ n: %d\n", ft_printf(" %c ", '0'));
