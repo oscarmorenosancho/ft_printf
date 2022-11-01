@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:22:03 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/11/01 12:29:54 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/11/01 19:38:16 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 int	main(void)
 {
-	ft_printf("\\ n: %d\n", ft_printf("%c", 'D'));
 	ft_printf("\\ n: %d\n", ft_printf("%s", "asdf1234"));
 	ft_printf("\\ n: %d\n", ft_printf("%p", "asdf1234"));
-	ft_printf("\\ n: %d\n", ft_printf("%i", 10));
+	ft_printf("\\ n: %d\n", ft_printf("%i", 324));
 	ft_printf("\\ n: %d\n", ft_printf("%X", 10));
 	ft_printf("\\ n: %d\n", ft_printf("%d", 999));
 	ft_printf("\\ n: %d\n", ft_printf("%X", 0x01abcdef));
 	ft_printf("\\ n: %d\n", ft_printf("%X", -1));
 	ft_printf("\\ n: %d\n", ft_printf("%u", 1));
-	ft_printf("\\ n: %d\n", ft_printf("%%", 999));
+	ft_printf("\\ n: %d\n", ft_printf("%%", 10, 10, 10));
 	ft_printf("\\ n: %d\n", ft_printf(" %c ", '0'));
 	ft_printf("\n");
 	ft_printf("\\ n: %d\n", ft_printf(" %c", '0' - 256));
@@ -38,5 +37,7 @@ int	main(void)
 	ft_printf("\n");
 	ft_printf("\\ n: %d\n", ft_printf(" %c %c %c ", 0, '1', '2'));
 	ft_printf("\n");
+	ft_printf("\\ n: %d\n", ft_printf("\001a\002b\007c\vd\010e\ff\rg\n"));
+	ft_printf("\\ n: %d\n", ft_printf(""));
 	return (0);
 }

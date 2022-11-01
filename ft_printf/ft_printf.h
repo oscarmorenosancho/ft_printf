@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 10:59:25 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/11/01 12:31:06 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/11/01 18:58:36 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 
-typedef size_t	(*t_ft_delegate)(char **p, va_list ap);
+typedef long	(*t_ft_delegate)(char **p, va_list *ap);
 
 typedef struct s_delegate_map
 {
@@ -28,12 +28,14 @@ typedef struct s_delegate_map
 	t_ft_delegate	ft_delegate;
 }	t_delegate_map;
 
-size_t	ft_process_int_arg(char **p, va_list ap);
-size_t	ft_process_uint_arg(char **p, va_list ap);
-size_t	ft_process_uihex_arg(char **p, va_list ap);
-size_t	ft_process_uihex_up_arg(char **p, va_list ap);
-size_t	ft_process_char_arg(char **p, va_list ap);
-size_t	ft_process_str_arg(char **p, va_list ap);
-size_t	ft_process_pointer_arg(char **p, va_list ap);
+long	ft_process_int_arg(char **p, va_list *ap);
+long	ft_process_uint_arg(char **p, va_list *ap);
+long	ft_process_uihex_arg(char **p, va_list *ap);
+long	ft_process_uihex_up_arg(char **p, va_list *ap);
+long	ft_process_char_arg(char **p, va_list *ap);
+long	ft_process_str_arg(char **p, va_list *ap);
+long	ft_process_pointer_arg(char **p, va_list *ap);
+long	ft_process_perc_arg(char **p, va_list *ap);
+void	ft_fill_delegate_map(t_delegate_map	*map);
 int		ft_printf(const char *fmt, ...);
 #endif

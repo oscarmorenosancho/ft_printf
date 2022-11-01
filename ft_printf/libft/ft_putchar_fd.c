@@ -6,14 +6,17 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 10:01:23 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/09/21 10:12:55 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/11/01 17:45:51 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	ssize_t	w_r;
+
+	w_r = write(fd, &c, 1);
+	return (w_r == 1);
 }

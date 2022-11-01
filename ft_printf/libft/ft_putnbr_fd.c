@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 10:17:32 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/11/01 13:18:16 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/11/01 17:26:58 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ size_t	ft_utobuf(unsigned long nb, char *buf)
 	return (ret + 1);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr_fd(int n, int fd)
 {
 	char		neg;
 	long int	aux;
@@ -55,5 +55,5 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	len = ft_utobuf ((unsigned int)aux, p);
 	p[len] = 0;
-	ft_putstr_fd(buf, fd);
+	return (ft_putstr_fd(buf, fd));
 }
