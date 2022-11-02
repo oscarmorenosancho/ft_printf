@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:22:03 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/11/01 19:38:16 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/11/02 15:39:53 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(void)
 	ft_printf("\\ n: %d\n", ft_printf(" %c %c %c ", 0, '1', '2'));
 	ft_printf("\n");
 	ft_printf("\\ n: %d\n", ft_printf("\001a\002b\007c\vd\010e\ff\rg\n"));
-	ft_printf("\\ n: %d\n", ft_printf(""));
+	ft_printf("\\ n: %d\n", ft_printf("%s", ""));
+	ft_printf("\\ n: %d\n", ft_printf("%s", NULL));
 	return (0);
 }

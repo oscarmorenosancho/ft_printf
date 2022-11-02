@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 10:58:50 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/11/01 19:36:28 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/11/02 15:58:25 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ static long	ft_process_arg(char **p, va_list *ap, t_delegate_map *map)
 	while (i < DLGT_MAP_TAB_SIZE && map[i].c)
 	{
 		if (flag == map[i].c)
-		{
 			return ((*(map[i].ft_delegate))(p, ap));
-		}
 		i++;
 	}
 	put_ret = ft_putchar_fd(flag, 1);
@@ -71,7 +69,7 @@ int	ft_printf(const char *fmt, ...)
 	printed = 0;
 	while (*p)
 	{
-		if (! ft_iterate(&p, &printed, &ap, map))
+		if (ft_iterate(&p, &printed, &ap, map) < 0)
 		{
 			va_end(ap);
 			return (-1);

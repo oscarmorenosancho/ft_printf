@@ -6,7 +6,7 @@
 /*   By: omoreno- <omoreno-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:39:35 by omoreno-          #+#    #+#             */
-/*   Updated: 2022/11/01 19:41:31 by omoreno-         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:25:26 by omoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,34 +37,35 @@ long	ft_process_int_arg(char **p, va_list *ap)
 	long	printed;
 	int		val;
 	char	*str;
-	int		put_ret;
 
 	printed = 0;
 	if (!p || !*p || !ap)
-		return (printed);
+		return (-1);
 	val = va_arg(*ap, int);
 	str = ft_itoa(val);
 	if (str)
 	{
 		printed = (long) ft_strlen(str);
-		put_ret = ft_putstr_fd(str, 1);
-		free (str);
-		if (! put_ret)
+		if (! ft_putstr_fd(str, 1))
+		{
+			free (str);
 			return (-1);
+		}
+		free (str);
 	}
+	else
+		return (-1);
 	return (printed);
 }
 
 long	ft_process_char_arg(char **p, va_list *ap)
 {
 	char	val;
-	int		put_ret;
 
 	if (!p || !*p || !ap)
-		return (0);
+		return (-1);
 	val = va_arg(*ap, int);
-	put_ret = ft_putchar_fd(val, 1);
-	if (! put_ret)
+	if (! ft_putchar_fd(val, 1))
 		return (-1);
 	return (1);
 }
@@ -72,22 +73,21 @@ long	ft_process_char_arg(char **p, va_list *ap)
 long	ft_process_str_arg(char **p, va_list *ap)
 {
 	char	*val;
-	int		put_ret;
 	size_t	len;		
 
 	if (!p || !*p || !ap)
-		return (0);
+		return (-1);
 	val = va_arg(*ap, char *);
 	if (val)
 	{
 		len = ft_strlen(val);
-		if (! len)
+		if (len == 0)
 			return (0);
-		put_ret = ft_putstr_fd(val, 1);
-		if (! put_ret)
+		if (! ft_putstr_fd(val, 1))
 			return (-1);
 		return (ft_strlen(val));
 	}
-	ft_putstr_fd("(null)", 1);
+	if (! ft_putstr_fd("(null)", 1))
+		return (-1);
 	return (6);
 }
